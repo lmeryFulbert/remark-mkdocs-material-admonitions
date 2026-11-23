@@ -1,0 +1,698 @@
+<hr>
+<h2>title: MkDocs Material Admonitions Test
+description: Comprehensive compatibility test for MkDocs Material admonitions in Astro Starlight.
+sidebar:
+order: 1</h2>
+<h1>MkDocs Material Admonitions — Test Suite</h1>
+<p>This page demonstrates the features of MkDocs Material admonitions.</p>
+<p>It is designed to test Markdown rendering, custom titles, aliases,
+collapsible blocks, nested content, tables, and edge cases.</p>
+<p>All examples use standard MkDocs Material syntax.</p>
+<h2>1. The 12 Admonition Types</h2>
+<div class="mkdocs-admonition mkdocs-note" data-mkdocs-title="Note" data-mkdocs-type="note">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✎</span><span>Note</span></div>
+<p>This is a standard note.</p>
+<p>It contains a second paragraph to test spacing.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-abstract" data-mkdocs-title="Abstract" data-mkdocs-type="abstract">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">☷</span><span>Abstract</span></div>
+<p>This section provides a short summary of a fictional project.</p>
+<p>The project aims to build a small library management system.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-info" data-mkdocs-title="Information" data-mkdocs-type="info">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">ℹ</span><span>Information</span></div>
+<p>The library is open from Monday to Friday.</p>
+<p>Visitors can borrow books, magazines, and digital resources.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-tip" data-mkdocs-title="Useful Tip" data-mkdocs-type="tip">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✦</span><span>Useful Tip</span></div>
+<p>Save your work regularly.</p>
+<p>Use descriptive filenames to make your documents easier to find.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-success" data-mkdocs-title="Success" data-mkdocs-type="success">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✓</span><span>Success</span></div>
+<p>The application has been installed successfully.</p>
+<p>All automated checks have passed.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-question" data-mkdocs-title="Question" data-mkdocs-type="question">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">?</span><span>Question</span></div>
+<p>What is the difference between a website and a web application?</p>
+</div>
+<div class="mkdocs-admonition mkdocs-warning" data-mkdocs-title="Warning" data-mkdocs-type="warning">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">⚠</span><span>Warning</span></div>
+<p>This operation may overwrite existing files.</p>
+<p>Make sure you have a backup before continuing.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-failure" data-mkdocs-title="Failure" data-mkdocs-type="failure">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✕</span><span>Failure</span></div>
+<p>The application could not connect to the database.</p>
+<p>Please check the connection settings.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-danger" data-mkdocs-title="Danger" data-mkdocs-type="danger">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">⚡</span><span>Danger</span></div>
+<p>Deleting the database will permanently remove all stored records.</p>
+<p>This action cannot be undone.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-bug" data-mkdocs-title="Bug" data-mkdocs-type="bug">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">◆</span><span>Bug</span></div>
+<p>An unexpected error occurs when the user submits an empty form.</p>
+<p>The issue has been reported to the development team.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-example" data-mkdocs-title="Example" data-mkdocs-type="example">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">▣</span><span>Example</span></div>
+<p>A small library contains three categories of books:</p>
+<ul>
+<li>Fiction</li>
+<li>Science</li>
+<li>History</li>
+</ul>
+</div>
+<div class="mkdocs-admonition mkdocs-quote" data-mkdocs-title="Quotation" data-mkdocs-type="quote">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">❝</span><span>Quotation</span></div>
+<p>Simplicity is the ultimate sophistication.</p>
+</div>
+<hr>
+<h2>2. MkDocs Material Aliases</h2>
+<p>Each alias should produce the same visual style as its corresponding type.</p>
+<div class="mkdocs-admonition mkdocs-abstract" data-mkdocs-title="Summary" data-mkdocs-type="abstract">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">☷</span><span>Summary</span></div>
+<p>Alias of <code>abstract</code>.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-abstract" data-mkdocs-title="TL;DR" data-mkdocs-type="abstract">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">☷</span><span>TL;DR</span></div>
+<p>Another alias of <code>abstract</code>.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-tip" data-mkdocs-title="Hint" data-mkdocs-type="tip">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✦</span><span>Hint</span></div>
+<p>Alias of <code>tip</code>.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-tip" data-mkdocs-title="Important" data-mkdocs-type="tip">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✦</span><span>Important</span></div>
+<p>Another alias of <code>tip</code>.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-success" data-mkdocs-title="Check" data-mkdocs-type="success">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✓</span><span>Check</span></div>
+<p>Alias of <code>success</code>.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-success" data-mkdocs-title="Done" data-mkdocs-type="success">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✓</span><span>Done</span></div>
+<p>Another alias of <code>success</code>.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-question" data-mkdocs-title="Help" data-mkdocs-type="question">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">?</span><span>Help</span></div>
+<p>Alias of <code>question</code>.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-question" data-mkdocs-title="Frequently Asked Questions" data-mkdocs-type="question">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">?</span><span>Frequently Asked Questions</span></div>
+<p>Another alias of <code>question</code>.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-warning" data-mkdocs-title="Caution" data-mkdocs-type="warning">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">⚠</span><span>Caution</span></div>
+<p>Alias of <code>warning</code>.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-warning" data-mkdocs-title="Attention" data-mkdocs-type="warning">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">⚠</span><span>Attention</span></div>
+<p>Another alias of <code>warning</code>.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-failure" data-mkdocs-title="Fail" data-mkdocs-type="failure">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✕</span><span>Fail</span></div>
+<p>Alias of <code>failure</code>.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-failure" data-mkdocs-title="Missing" data-mkdocs-type="failure">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✕</span><span>Missing</span></div>
+<p>Another alias of <code>failure</code>.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-danger" data-mkdocs-title="Error" data-mkdocs-type="danger">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">⚡</span><span>Error</span></div>
+<p>Alias of <code>danger</code>.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-quote" data-mkdocs-title="Citation" data-mkdocs-type="quote">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">❝</span><span>Citation</span></div>
+<p>Alias of <code>quote</code>.</p>
+</div>
+<hr>
+<h2>3. Rich Markdown Content</h2>
+<h3>3.1 Multiple Paragraphs</h3>
+<div class="mkdocs-admonition mkdocs-info" data-mkdocs-title="Multiple Paragraphs" data-mkdocs-type="info">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">ℹ</span><span>Multiple Paragraphs</span></div>
+<p>This is the first paragraph.</p>
+<p>This is the second paragraph.</p>
+<p>This is the third paragraph.</p>
+<p>This is the fourth paragraph.</p>
+<p>All four paragraphs must remain inside the same admonition.</p>
+</div>
+<h3>3.2 Text Formatting</h3>
+<div class="mkdocs-admonition mkdocs-warning" data-mkdocs-title="Formatted Text" data-mkdocs-type="warning">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">⚠</span><span>Formatted Text</span></div>
+<p>This sentence contains <strong>bold text</strong>, <em>italic text</em>,
+<del>strikethrough text</del>, and <code>inline code</code>.</p>
+<p>You can also combine <strong>bold and <em>italic</em> formatting</strong>.</p>
+<p>Here is a <a href="https://astro.build">link to Astro</a>.</p>
+</div>
+<h3>3.3 Unordered Lists</h3>
+<div class="mkdocs-admonition mkdocs-example" data-mkdocs-title="Shopping List" data-mkdocs-type="example">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">▣</span><span>Shopping List</span></div>
+<p>Ingredients for a simple breakfast:</p>
+<ul>
+<li>Bread</li>
+<li>Butter</li>
+<li>Jam</li>
+<li>Coffee</li>
+<li>Orange juice</li>
+</ul>
+<p>This paragraph must remain inside the admonition after the list.</p>
+</div>
+<h3>3.4 Ordered Lists</h3>
+<div class="mkdocs-admonition mkdocs-tip" data-mkdocs-title="Installation Procedure" data-mkdocs-type="tip">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✦</span><span>Installation Procedure</span></div>
+<p>Follow these steps:</p>
+<ol>
+<li>Download the application.</li>
+<li>Extract the archive.</li>
+<li>Open the configuration file.</li>
+<li>Start the application.</li>
+<li>Verify that everything works.</li>
+</ol>
+<p>The procedure is now complete.</p>
+</div>
+<h3>3.5 Nested Lists</h3>
+<div class="mkdocs-admonition mkdocs-note" data-mkdocs-title="Nested Lists" data-mkdocs-type="note">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✎</span><span>Nested Lists</span></div>
+<p>The fictional company has several departments:</p>
+<ul>
+<li>Administration
+<ul>
+<li>Human Resources</li>
+<li>Accounting</li>
+</ul>
+</li>
+<li>Technology
+<ul>
+<li>Development</li>
+<li>Technical Support</li>
+</ul>
+</li>
+<li>Marketing
+<ul>
+<li>Advertising</li>
+<li>Communication</li>
+</ul>
+</li>
+</ul>
+<p>All nested items should render correctly.</p>
+</div>
+<h3>3.6 Code Blocks</h3>
+<div class="mkdocs-admonition mkdocs-example" data-mkdocs-title="Bash Commands" data-mkdocs-type="example">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">▣</span><span>Bash Commands</span></div>
+<p>The following commands display basic system information:</p>
+<pre><code class="language-bash">echo "Hello, world!"
+pwd
+ls -la
+whoami
+</code></pre>
+<p>This sentence must appear after the code block,
+but still inside the admonition.</p>
+</div>
+<h3>3.7 Multiple Code Blocks</h3>
+<div class="mkdocs-admonition mkdocs-info" data-mkdocs-title="Python and JSON" data-mkdocs-type="info">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">ℹ</span><span>Python and JSON</span></div>
+<p>First, a Python example:</p>
+<pre><code class="language-python">def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Alice"))
+</code></pre>
+<p>Next, a JSON example:</p>
+<pre><code class="language-json">{
+  "name": "Alice",
+  "role": "developer",
+  "active": true
+}
+</code></pre>
+<p>Both code blocks belong to the same admonition.</p>
+</div>
+<hr>
+<h2>4. Tables Inside Admonitions</h2>
+<h3>4.1 Simple Table</h3>
+<div class="mkdocs-admonition mkdocs-example" data-mkdocs-title="Product Catalog" data-mkdocs-type="example">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">▣</span><span>Product Catalog</span></div>
+<p>The following table contains fictional products.</p>
+<table>
+<thead>
+<tr>
+<th align="right">ID</th>
+<th>Product</th>
+<th>Category</th>
+<th align="right">Price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">1</td>
+<td>Notebook</td>
+<td>Stationery</td>
+<td align="right">$4.50</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>Keyboard</td>
+<td>Electronics</td>
+<td align="right">$29.90</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>Coffee Mug</td>
+<td>Kitchen</td>
+<td align="right">$8.00</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Desk Lamp</td>
+<td>Furniture</td>
+<td align="right">$35.00</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Expected result:</strong> The entire table must remain inside the admonition.</p>
+<p>The paragraph after the table must also remain inside.</p>
+</div>
+<h3>4.2 Table With Formatting</h3>
+<div class="mkdocs-admonition mkdocs-info" data-mkdocs-title="Employee Directory" data-mkdocs-type="info">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">ℹ</span><span>Employee Directory</span></div>
+<p>This table contains formatted Markdown cells.</p>
+<table>
+<thead>
+<tr>
+<th>Employee</th>
+<th>Department</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Alice</strong></td>
+<td>Development</td>
+<td><strong>Active</strong></td>
+</tr>
+<tr>
+<td><em>Bob</em></td>
+<td>Marketing</td>
+<td>On leave</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td><code>IT-SUPPORT</code></td>
+<td>Active</td>
+</tr>
+<tr>
+<td>Diana</td>
+<td><a href="https://example.com">Documentation</a></td>
+<td>Active</td>
+</tr>
+</tbody>
+</table>
+<p>Text formatting and links must work inside table cells.</p>
+</div>
+<h3>4.3 Table Followed by a List</h3>
+<div class="mkdocs-admonition mkdocs-tip" data-mkdocs-title="Course Results" data-mkdocs-type="tip">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✦</span><span>Course Results</span></div>
+<p>The following students completed their assignments.</p>
+<table>
+<thead>
+<tr>
+<th>Student</th>
+<th align="right">Assignment 1</th>
+<th align="right">Assignment 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice</td>
+<td align="right">18</td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td align="right">14</td>
+<td align="right">17</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td align="right">12</td>
+<td align="right">15</td>
+</tr>
+</tbody>
+</table>
+<p>Observations:</p>
+<ul>
+<li>Alice obtained the highest first score.</li>
+<li>Bob improved on the second assignment.</li>
+<li>All students completed both assignments.</li>
+</ul>
+<p><strong>Conclusion:</strong> The table and the list belong to the same admonition.</p>
+</div>
+<hr>
+<h2>5. Collapsible Admonitions</h2>
+<h3>5.1 Closed by Default</h3>
+<details class="mkdocs-admonition mkdocs-info" data-mkdocs-title="Click to Expand" data-mkdocs-type="info">
+<summary class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">ℹ</span><span>Click to Expand</span></summary>
+<p>This block should initially be collapsed.</p>
+<p>It contains multiple paragraphs.</p>
+<p>It also contains a list:</p>
+<ul>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+</ul>
+</details>
+<h3>5.2 Open by Default</h3>
+<details class="mkdocs-admonition mkdocs-warning" data-mkdocs-title="Initially Expanded" data-mkdocs-type="warning" open>
+<summary class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">⚠</span><span>Initially Expanded</span></summary>
+<p>This block should initially be expanded.</p>
+<p>The user should be able to collapse it.</p>
+<p><strong>Important:</strong> The content must remain accessible.</p>
+</details>
+<h3>5.3 Collapsible Block With a Table</h3>
+<details class="mkdocs-admonition mkdocs-example" data-mkdocs-title="Show Product Details" data-mkdocs-type="example">
+<summary class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">▣</span><span>Show Product Details</span></summary>
+<p>This table should only be visible when the block is expanded.</p>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th align="right">Quantity</th>
+<th>Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apples</td>
+<td align="right">25</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Oranges</td>
+<td align="right">12</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Bananas</td>
+<td align="right">0</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>This paragraph follows the table.</p>
+</details>
+<h3>5.4 Collapsible Block With Code</h3>
+<details class="mkdocs-admonition mkdocs-tip" data-mkdocs-title="Show Configuration" data-mkdocs-type="tip" open>
+<summary class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✦</span><span>Show Configuration</span></summary>
+<p>Example configuration:</p>
+<pre><code class="language-yaml">application:
+  name: demo
+  version: 1.0
+  debug: false
+</code></pre>
+<p>The code block must remain properly formatted.</p>
+</details>
+<hr>
+<h2>6. Nested Admonitions</h2>
+<h3>6.1 Two Levels</h3>
+<div class="mkdocs-admonition mkdocs-info" data-mkdocs-title="Parent Admonition" data-mkdocs-type="info">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">ℹ</span><span>Parent Admonition</span></div>
+<p>This paragraph belongs to the parent admonition.</p>
+<div class="mkdocs-admonition mkdocs-warning" data-mkdocs-title="Child Admonition" data-mkdocs-type="warning">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">⚠</span><span>Child Admonition</span></div>
+<p>This paragraph belongs to the nested warning.</p>
+<p>The child has its own title, icon, and background.</p>
+</div>
+<p>This paragraph belongs to the parent again.</p>
+</div>
+<h3>6.2 Three Levels</h3>
+<div class="mkdocs-admonition mkdocs-note" data-mkdocs-title="Level One" data-mkdocs-type="note">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✎</span><span>Level One</span></div>
+<p>Content at the first level.</p>
+<div class="mkdocs-admonition mkdocs-tip" data-mkdocs-title="Level Two" data-mkdocs-type="tip">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✦</span><span>Level Two</span></div>
+<p>Content at the second level.</p>
+<div class="mkdocs-admonition mkdocs-success" data-mkdocs-title="Level Three" data-mkdocs-type="success">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✓</span><span>Level Three</span></div>
+<p>Content at the third level.</p>
+<p><strong>All three levels should remain visually distinct.</strong></p>
+</div>
+<p>Back to the second level.</p>
+</div>
+<p>Back to the first level.</p>
+</div>
+<h3>6.3 Nested Admonition Containing a Table</h3>
+<div class="mkdocs-admonition mkdocs-info" data-mkdocs-title="Company Overview" data-mkdocs-type="info">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">ℹ</span><span>Company Overview</span></div>
+<p>A fictional company manages several projects.</p>
+<p>The following warning contains a complete Markdown table.</p>
+<div class="mkdocs-admonition mkdocs-warning" data-mkdocs-title="Project Status" data-mkdocs-type="warning">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">⚠</span><span>Project Status</span></div>
+<p>Some projects require attention.</p>
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Manager</th>
+<th align="right">Progress</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alpha</td>
+<td>Alice</td>
+<td align="right">100%</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Beta</td>
+<td>Bob</td>
+<td align="right">65%</td>
+<td>In progress</td>
+</tr>
+<tr>
+<td>Gamma</td>
+<td>Charlie</td>
+<td align="right">20%</td>
+<td>Delayed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Analysis:</strong></p>
+<ul>
+<li>Project Alpha is complete.</li>
+<li>Project Beta is progressing normally.</li>
+<li>Project Gamma requires additional resources.</li>
+</ul>
+<p>The table, analysis, and this paragraph must remain
+inside the nested warning.</p>
+</div>
+<p>The parent admonition continues here.</p>
+<p><strong>Expected result:</strong> The nested warning must not terminate
+the parent admonition.</p>
+</div>
+<h3>6.4 Nested Collapsible Admonition</h3>
+<div class="mkdocs-admonition mkdocs-example" data-mkdocs-title="Frequently Asked Questions" data-mkdocs-type="example">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">▣</span><span>Frequently Asked Questions</span></div>
+<p>This parent admonition contains collapsible questions.</p>
+<details class="mkdocs-admonition mkdocs-question" data-mkdocs-title="What is Markdown?" data-mkdocs-type="question">
+<summary class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">?</span><span>What is Markdown?</span></summary>
+<p>Markdown is a lightweight markup language.</p>
+<p>It is commonly used for technical documentation.</p>
+</details>
+<details class="mkdocs-admonition mkdocs-question" data-mkdocs-title="What is Astro?" data-mkdocs-type="question" open>
+<summary class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">?</span><span>What is Astro?</span></summary>
+<p>Astro is a web framework for building content-driven websites.</p>
+<p>This answer is initially expanded.</p>
+</details>
+<p>End of the parent admonition.</p>
+</div>
+<hr>
+<h2>7. Mixed Complex Content</h2>
+<div class="mkdocs-admonition mkdocs-example" data-mkdocs-title="Complete Recipe" data-mkdocs-type="example">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">▣</span><span>Complete Recipe</span></div>
+<p>This example combines several Markdown features.</p>
+<p><strong>Recipe:</strong> Simple Pancakes</p>
+<h3>Ingredients</h3>
+<table>
+<thead>
+<tr>
+<th>Ingredient</th>
+<th>Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flour</td>
+<td>200 g</td>
+</tr>
+<tr>
+<td>Milk</td>
+<td>300 ml</td>
+</tr>
+<tr>
+<td>Eggs</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Sugar</td>
+<td>20 g</td>
+</tr>
+</tbody>
+</table>
+<h3>Instructions</h3>
+<ol>
+<li>Mix the flour and sugar.</li>
+<li>Add the eggs.</li>
+<li>Slowly pour in the milk.</li>
+<li>Mix until smooth.</li>
+<li>Cook in a hot pan.</li>
+</ol>
+<div class="mkdocs-admonition mkdocs-tip" data-mkdocs-title="Cooking Tip" data-mkdocs-type="tip">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✦</span><span>Cooking Tip</span></div>
+<p>Let the batter rest for 10 minutes.</p>
+<p>This can improve the texture of the pancakes.</p>
+</div>
+<h3>Example Data</h3>
+<pre><code class="language-json">{
+  "recipe": "pancakes",
+  "servings": 4,
+  "preparation_minutes": 15,
+  "vegetarian": true
+}
+</code></pre>
+<p><strong>Enjoy your breakfast!</strong></p>
+</div>
+<hr>
+<h2>8. Custom Titles and Special Cases</h2>
+<h3>8.1 No Custom Title</h3>
+<div class="mkdocs-admonition mkdocs-note" data-mkdocs-title="Note" data-mkdocs-type="note">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✎</span><span>Note</span></div>
+<p>This admonition uses the default title.</p>
+</div>
+<h3>8.2 Explicitly Empty Title</h3>
+<div class="mkdocs-admonition mkdocs-info" data-mkdocs-title="" data-mkdocs-type="info">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">ℹ</span><span></span></div>
+<p>This admonition has an explicitly empty custom title.</p>
+</div>
+<h3>8.3 Long Title</h3>
+<div class="mkdocs-admonition mkdocs-warning" data-mkdocs-title="This Is a Very Long Admonition Title Designed to Test Text Wrapping and Layout Behavior on Narrow Screens" data-mkdocs-type="warning">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">⚠</span><span>This Is a Very Long Admonition Title Designed to Test Text Wrapping and Layout Behavior on Narrow Screens</span></div>
+<p>The title should wrap without overflowing the container.</p>
+</div>
+<h3>8.4 Special Characters</h3>
+<div class="mkdocs-admonition mkdocs-tip" data-mkdocs-title="Symbols: ! ? &#x26; / ( ) [ ]" data-mkdocs-type="tip">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✦</span><span>Symbols: ! ? &#x26; / ( ) [ ]</span></div>
+<p>Special characters in titles should be displayed correctly.</p>
+</div>
+<h3>8.5 Unicode Characters</h3>
+<div class="mkdocs-admonition mkdocs-success" data-mkdocs-title="Unicode Test — Café, naïve, résumé, 日本語, 🚀" data-mkdocs-type="success">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✓</span><span>Unicode Test — Café, naïve, résumé, 日本語, 🚀</span></div>
+<p>Unicode characters should be preserved.</p>
+<p>Accented characters: é è ê ë à ù ç ñ ö.</p>
+</div>
+<h3>8.6 Inline Code in Content</h3>
+<div class="mkdocs-admonition mkdocs-note" data-mkdocs-title="Inline Code" data-mkdocs-type="note">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✎</span><span>Inline Code</span></div>
+<p>Use <code>npm install</code> to install dependencies.</p>
+<p>The configuration file is named <code>astro.config.mjs</code>.</p>
+<p>The value <code>true</code> is different from the string <code>"true"</code>.</p>
+</div>
+<hr>
+<h2>9. Boundary Detection</h2>
+<h3>9.1 Text After an Admonition</h3>
+<div class="mkdocs-admonition mkdocs-info" data-mkdocs-title="Inside the Admonition" data-mkdocs-type="info">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">ℹ</span><span>Inside the Admonition</span></div>
+<p>This paragraph belongs to the admonition.</p>
+<p>This second paragraph also belongs to the admonition.</p>
+</div>
+<p>This paragraph must be <strong>OUTSIDE</strong> the admonition.</p>
+<div class="mkdocs-admonition mkdocs-danger" data-mkdocs-title="Another Admonition" data-mkdocs-type="danger">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">⚡</span><span>Another Admonition</span></div>
+<p>This is a completely separate admonition.</p>
+</div>
+<p>This paragraph must also remain <strong>OUTSIDE</strong>.</p>
+<h3>9.2 Consecutive Admonitions</h3>
+<div class="mkdocs-admonition mkdocs-note" data-mkdocs-title="First" data-mkdocs-type="note">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✎</span><span>First</span></div>
+<p>First admonition.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-tip" data-mkdocs-title="Second" data-mkdocs-type="tip">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✦</span><span>Second</span></div>
+<p>Second admonition.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-success" data-mkdocs-title="Third" data-mkdocs-type="success">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✓</span><span>Third</span></div>
+<p>Third admonition.</p>
+</div>
+<div class="mkdocs-admonition mkdocs-warning" data-mkdocs-title="Fourth" data-mkdocs-type="warning">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">⚠</span><span>Fourth</span></div>
+<p>Fourth admonition.</p>
+</div>
+<p>There should be four distinct blocks.</p>
+<h3>9.3 Empty Lines</h3>
+<div class="mkdocs-admonition mkdocs-example" data-mkdocs-title="Spacing Test" data-mkdocs-type="example">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">▣</span><span>Spacing Test</span></div>
+<p>First paragraph.</p>
+<p>Second paragraph after additional empty lines.</p>
+<p>Third paragraph.</p>
+</div>
+<p>The layout should remain consistent.</p>
+<hr>
+<h2>10. Invalid Syntax and Non-Admonition Content</h2>
+<p>The following examples should not be converted into admonitions.</p>
+<h3>10.1 Unknown Type</h3>
+<p>!!! warnin,g "Invalid Type"
+This declaration contains an invalid type name.</p>
+<pre><code>It should remain ordinary Markdown text.
+</code></pre>
+<h3>10.2 Admonition Syntax Inside a Code Block</h3>
+<p>The following code block contains literal MkDocs syntax.</p>
+<pre><code class="language-markdown">!!! warning "Literal Example"
+    This is only a code sample.
+
+??? info "Another Literal Example"
+    This is not a real collapsible admonition.
+</code></pre>
+<p>The plugin must not convert the content of this code block.</p>
+<h3>10.3 Similar-Looking Text</h3>
+<p>This is an ordinary paragraph containing <code>!!! note</code>.</p>
+<p>The following text is also ordinary Markdown:</p>
+<p><code>??? warning "Example"</code></p>
+<p>Neither inline expression should create an admonition.</p>
+<hr>
+<h2>11. Final Compatibility Checklist</h2>
+<p>Use this checklist to validate the rendered page.</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> All 12 admonition types render correctly.</li>
+<li class="task-list-item"><input type="checkbox" disabled> All 14 aliases use the correct styles.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Custom titles are preserved.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Default titles are displayed correctly.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Empty titles do not break rendering.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Multiple paragraphs remain inside their blocks.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Bold, italic, links, and inline code work.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Ordered and unordered lists render correctly.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Code blocks preserve syntax highlighting.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Tables remain inside admonitions.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Collapsible blocks open and close correctly.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Nested admonitions render correctly.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Tables inside nested admonitions render correctly.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Parent admonitions continue after nested blocks.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Text following admonitions remains outside.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Invalid declarations are not transformed.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Literal admonition syntax inside code blocks is preserved.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Layout remains usable on mobile screens.</li>
+</ul>
+<hr>
+<h2>12. End of Test</h2>
+<div class="mkdocs-admonition mkdocs-success" data-mkdocs-title="Test Page Complete" data-mkdocs-type="success">
+<div class="mkdocs-title"><span class="mkdocs-icon" aria-hidden="true">✓</span><span>Test Page Complete</span></div>
+<p>You have reached the end of the demonstration.</p>
+<p>If all examples render correctly, the plugin supports
+the principal features demonstrated on this page.</p>
+<p><strong>Congratulations! 🎉</strong></p>
+</div>

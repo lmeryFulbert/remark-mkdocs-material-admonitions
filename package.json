@@ -1,0 +1,52 @@
+{
+  "name": "remark-mkdocs-material-admonitions",
+  "version": "0.1.0",
+  "description": "Render MkDocs Material admonitions in unified, Astro, and Starlight without rewriting Markdown.",
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "keywords": [
+    "remark",
+    "remark-plugin",
+    "unified",
+    "mkdocs",
+    "admonitions",
+    "astro",
+    "starlight"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./style.css": "./src/mkdocs-admonitions.css"
+  },
+  "files": [
+    "src"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "workspaces": [
+    "examples/starlight"
+  ],
+  "scripts": {
+    "test": "node --test test/plugin.test.js",
+    "test:starlight": "npm run build --workspace=examples/starlight && node --test test/starlight.test.js",
+    "demo": "npm run dev --workspace=examples/starlight"
+  },
+  "devDependencies": {
+    "cheerio": "^1.1.2",
+    "rehype-stringify": "^10.0.1",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2"
+  },
+  "dependencies": {
+    "@types/mdast": "^4.0.4",
+    "unified": "^11.0.5"
+  }
+}

@@ -1,0 +1,149 @@
+
+.mkdocs-admonition {
+    --admonition-color: #448aff;
+    --admonition-bg: rgba(68, 138, 255, .10);
+  
+    margin: 1.5rem 0;
+    border: 1px solid var(--admonition-color);
+    border-left: 4px solid var(--admonition-color);
+    border-radius: 0.25rem;
+    overflow: hidden;
+    background: var(--sl-color-bg, transparent);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+  }
+  
+  .mkdocs-title {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .65rem 1rem;
+    font-weight: 700;
+    color: var(--admonition-color);
+    background: var(--admonition-bg);
+  }
+  
+  .mkdocs-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    flex-shrink: 0;
+    font-size: 1.15rem;
+  }
+  
+  .mkdocs-admonition > :not(.mkdocs-title):not(summary) {
+    margin: .8rem 1rem;
+  }
+  
+  .mkdocs-admonition > :last-child {
+    margin-bottom: 1rem;
+  }
+  
+  .mkdocs-admonition summary {
+    cursor: pointer;
+    list-style-position: inside;
+  }
+  
+  .mkdocs-admonition summary::marker {
+    color: var(--admonition-color);
+  }
+  
+  /* Couleurs inspirées de MkDocs Material */
+  
+  .mkdocs-note {
+    --admonition-color: #448aff;
+    --admonition-bg: rgba(68,138,255,.10);
+  }
+  .mkdocs-abstract {
+    --admonition-color: #00b0ff;
+    --admonition-bg: rgba(0,176,255,.10);
+  }
+  .mkdocs-info {
+    --admonition-color: #00b8d4;
+    --admonition-bg: rgba(0,184,212,.10);
+  }
+  .mkdocs-tip {
+    --admonition-color: #00bfa5;
+    --admonition-bg: rgba(0,191,165,.10);
+  }
+  .mkdocs-success {
+    --admonition-color: #00c853;
+    --admonition-bg: rgba(0,200,83,.10);
+  }
+  .mkdocs-question {
+    --admonition-color: #64dd17;
+    --admonition-bg: rgba(100,221,23,.10);
+  }
+  .mkdocs-warning {
+    --admonition-color: #ff9100;
+    --admonition-bg: rgba(255,145,0,.10);
+  }
+  .mkdocs-failure {
+    --admonition-color: #ff5252;
+    --admonition-bg: rgba(255,82,82,.10);
+  }
+  .mkdocs-danger {
+    --admonition-color: #ff1744;
+    --admonition-bg: rgba(255,23,68,.10);
+  }
+  .mkdocs-bug {
+    --admonition-color: #f50057;
+    --admonition-bg: rgba(245,0,87,.10);
+  }
+  .mkdocs-example {
+    --admonition-color: #7c4dff;
+    --admonition-bg: rgba(124,77,255,.10);
+  }
+  .mkdocs-quote {
+    --admonition-color: #9e9e9e;
+    --admonition-bg: rgba(158,158,158,.10);
+  }
+
+
+/* Blocs de code dans les admonitions */
+
+.mkdocs-admonition pre {
+    background: #101318 !important;
+    color: #e5e7eb !important;
+    border: 1px solid #303641;
+    border-radius: 6px;
+    box-shadow: none !important;
+  }
+  
+  /* Supprimer les décorations façon fenêtre macOS */
+  .mkdocs-admonition .expressive-code .frame::before,
+  .mkdocs-admonition .expressive-code .frame::after,
+  .mkdocs-admonition .expressive-code .header {
+    display: none !important;
+  }
+  
+  /* Conserver le fond sombre du code */
+  .mkdocs-admonition .expressive-code pre {
+    background: #101318 !important;
+  }
+  
+  /* Supprimer les marges décoratives */
+  .mkdocs-admonition .expressive-code .frame {
+    box-shadow: none !important;
+  }
+  
+  
+/* The flex layout hides the native disclosure marker. */
+.mkdocs-admonition > summary.mkdocs-title::after {
+  content: "";
+  width: .45em;
+  height: .45em;
+  margin-inline-start: auto;
+  border: solid currentColor;
+  border-width: 0 .13em .13em 0;
+  transform: rotate(-45deg);
+}
+
+.mkdocs-admonition[open] > summary.mkdocs-title::after {
+  transform: rotate(45deg);
+}
+
+.mkdocs-admonition > summary.mkdocs-title:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -3px;
+}
